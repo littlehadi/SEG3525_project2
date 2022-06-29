@@ -10,7 +10,7 @@ ul.sidenav {
   margin: 0;
   padding: 0;
   width: 25%;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -18,19 +18,19 @@ ul.sidenav {
 
 ul.sidenav li a {
   display: block;
-  color: #000;
+  color: rgb(0, 0, 0);
   padding: 8px 16px;
   text-decoration: none;
 }
  
 ul.sidenav li a.active {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
 }
 
 ul.sidenav li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: rgb(225, 126, 5);
+  color: rgb(0, 0, 0);
 }
 
 div.content {
@@ -59,7 +59,27 @@ div.content {
     text-align: center;
     float: none;
   }
+
+  .dropdown {
+  position: relative;
+  display: inline-block;
 }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ababab;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 </style>
 </head>
 <body>
@@ -70,11 +90,42 @@ div.content {
       </nav>
 <ul class="sidenav">
   <li><a class="active" href="index.html">Home</a></li>
-  <li><a href="#news">News</a></li>
+  <li class="nav-item">
+    <h2 style="background-color: #ffffff; text-align: center;">SHOP</h2>
+    <a class="nav-link" href="#">Baskebt Balls</a>
+    <ul> 
+        <li><a href="index.html">By Team</a></li> 
+        <li><a href="#">Limited Editions</a></li> 
+        <li><a style="color: #ef0000">On Sales</a></li> 
+        </ul> 
+    <a class="nav-link" href="#">Shoes</a>
+    <ul> 
+      <li><a href="index.html">By Team</a></li> 
+      <li><a href="#">Limited Editions</a></li> 
+      <li><a style="color: #ef0000">On Sales</a></li> 
+      </ul> 
+      <a class="nav-link" href="#">ActiveWear</a>
+      <ul> 
+        <li><a href="index.html">By Team</a></li> 
+        <li><a href="#">Limited Editions</a></li> 
+        <li><a style="color: #ef0000">On Sales</a></li> 
+        </ul> 
+      <li><a href="index.html">Deals</a></li> 
+    <li><a href="#">Cleareance Online Exclusive</a></li> 
+  </li>
+<div class="nav-link dropdown">
+  <span>Men</span>
+  <div class="dropdown-content">
+    <ul> 
+        <li><a href="index.html">By Team</a></li> 
+        <li><a href="#">Limited Editions</a></li> 
+        <li><a style="color: #ef0000">On Sales</a></li> 
+        </ul> 
+  </div>
+</div>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
 </ul>
-
 <div class="content">
   <h2>Responsive Sidenav Example</h2>
   <p>This example use media queries to transform the sidenav to a top navigation bar when the screen size is 900px or less.</p>
