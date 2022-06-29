@@ -21,6 +21,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script language="JavaScript">
+      var TRange=null;
+function findString (str) {
+ if (parseInt(navigator.appVersion)<4) return;
+ var strFound;
+ if (window.find) {
+
+  // CODE FOR BROWSERS THAT SUPPORT window.find
+  strFound=self.find(str);
+  if (strFound && self.getSelection && !self.getSelection().anchorNode) {
+   strFound=self.find(str)
+  }
+  if (!strFound) {
+   strFound=self.find(str,0,1)
+   while (self.find(str,0,1)) continue
+  }
+ }
+ else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+  // EXPLORER-SPECIFIC CODE
+
+  if (TRange!=null) {
+   TRange.collapse(false)
+   strFound=TRange.findText(str)
+   if (strFound) TRange.select()
+  }
+  if (TRange==null || strFound==0) {
+   TRange=self.document.body.createTextRange()
+   strFound=TRange.findText(str)
+   if (strFound) TRange.select()
+  }
+ }
+ else if (navigator.appName=="Opera") {
+  alert ("Opera browsers not supported, sorry...")
+  return;
+ }
+ if (!strFound) alert ("String '"+str+"' not found!")
+ return;
+}
+</script>
 </head>
 <!-- Navigator!-->
   <body>
@@ -34,10 +74,10 @@
             <a href="index.html" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item  nav-justified ">
-            <a class="nav-link" href="services.html">Our Story</a>
+            <a class="nav-link" href="aboutus.html">Our Story</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contactus.html">Shop</a>
+            <a class="nav-link" href="shop.html">Shop</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="reservation.html">Join</a>
@@ -46,11 +86,12 @@
             <a class="nav-link" href="services.html">FAQ</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="services.html">Contact Us</a>
+            <a class="nav-link" href="contactus.html">Contact Us</a>
           </li>      
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <div id="sb-search" class="sb-search">
+        <form name="f1" action="" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
+        <input type="text" name=t1 value="" size=20>
         </form>
       </div>
     </nav>
