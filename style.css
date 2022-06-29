@@ -275,7 +275,7 @@ input[type=text] {
 }
 
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(198, 4, 4, 0.78);
+    color: rgba(228, 113, 5, 0.78);
     opacity: 1; /* Firefox */
   }
 .w3-btn, .w3-button {
@@ -689,12 +689,12 @@ flip card
 }
 
 .btn-outline-warningg {
-    color: rgb(139, 204, 119);
+    color: rgb(204, 156, 119);
     margin-top: 2%;
     padding-top: 10px;
     position: center;
     font-size: large;
     background-color: transparent;
     background-image: none;
-    border-color: rgb(255, 255, 255)
+    border-color: rgb(237, 36, 5)
 }
