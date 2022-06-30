@@ -587,6 +587,13 @@ flip card
       text-align: center;
       color : rgb(4, 171, 209);
   }
+  .h13{
+    border: 3px solid #ffffff;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      color : rgb(0, 0, 0);
+  }
   .p3{
     padding : 10px;
     font-size: 25px;
