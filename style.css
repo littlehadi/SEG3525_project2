@@ -186,6 +186,14 @@ body {
     text-align: center
 }
 
+/* Footer */
+.mb-0 {
+    background: #000000;
+    height: 60px;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    padding: 20px;
+}
 
 
 .w3-button:hover {
@@ -405,6 +413,11 @@ input[type=text] {
     position: relative;
     text-align: center;
     color: white;
+  }
+  .containerr {
+    position: relative;
+    text-align: center;
+    color: rgb(197, 26, 26);
   }
   
   /* Bottom left text */
@@ -698,3 +711,4 @@ flip card
     background-image: none;
     border-color: rgb(237, 36, 5)
 }
+
