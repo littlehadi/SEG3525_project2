@@ -601,6 +601,13 @@ flip card
     text-align: center;
     color : rgb(240, 6, 6);
 }
+.p5{
+    padding : 10px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    color : rgb(240, 131, 6);
+}
 .p4{
     font-size: 20px;
     font-weight: none;
