@@ -749,3 +749,20 @@ flip card
     color: #ffffff;
     border-color: #000000
 }
+.btn-warningggg {
+    color: rgb(0, 0, 0);
+    margin-bottom: 100%;
+    padding-top: 10px;
+    font-size: 25px;
+    position: center;
+    width: 80px;
+    margin-bottom: 10px;
+    background-color: rgb(244, 132, 4);
+    background-image: none;
+    border-color: rgb(0, 0, 0)
+}
+
+.btn-warningggg:hover {
+    color: #000000;
+    border-color: #000000
+}
