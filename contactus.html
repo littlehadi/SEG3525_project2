@@ -1,67 +1,121 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <head>
   <title>BasketBall Town</title>
+  <script src="js/bootstrap.min.js"></script>    
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script language="JavaScript">
+      var TRange=null;
+function findString (str) {
+ if (parseInt(navigator.appVersion)<4) return;
+ var strFound;
+ if (window.find) {
 
+  // CODE FOR BROWSERS THAT SUPPORT window.find
+  strFound=self.find(str);
+  if (strFound && self.getSelection && !self.getSelection().anchorNode) {
+   strFound=self.find(str)
+  }
+  if (!strFound) {
+   strFound=self.find(str,0,1)
+   while (self.find(str,0,1)) continue
+  }
+ }
+ else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+  // EXPLORER-SPECIFIC CODE
+
+  if (TRange!=null) {
+   TRange.collapse(false)
+   strFound=TRange.findText(str)
+   if (strFound) TRange.select()
+  }
+  if (TRange==null || strFound==0) {
+   TRange=self.document.body.createTextRange()
+   strFound=TRange.findText(str)
+   if (strFound) TRange.select()
+  }
+ }
+ else if (navigator.appName=="Opera") {
+  alert ("Opera browsers not supported, sorry...")
+  return;
+ }
+ if (!strFound) alert ("String '"+str+"' not found!")
+ return;
+}
+</script>
+</head>
+<!-- Navigator!-->
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom " style="background-color: #000000;">
       <div class="right-link ">
-        <a class="w3-xlarge w3-text-white"><span class="p5">BasketBall</span> <span class="p7">Town</span></h1>
+        <a class="w3-xlarge w3-text-white"><span class="p5">BasketBall</span> 
+          <span class="p7">T</span>
+          <span class="iconify-inline" data-icon="fa-solid:basketball-ball" style='color: orange;' data-rotate="90deg"></span>
+        </span> <i class="fas fa-basketball-ball"></i> <span class="p7">wn</span>
         </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-            <a href="index.html" class="nav-link" href="index.html">Home</a>
+            <li class="nav-item  nav-justified ">
+            <a href="index.html" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active nav-justified ">
-            <a class="nav-link" href="services.html">Our Story</a>
+          <li class="nav-item  nav-justified ">
+            <a class="nav-link" href="aboutus.html">Our Story</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="contactus.html">Shop</a>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">Shop</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="reservation.html">Join</a>
+          <li class="nav-item">
+            <a class="nav-link" href="reservation.html">Join Us</a>
           </li>   
-          <li class="nav-item active">
-            <a class="nav-link" href="services.html">FAQ</a>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
           </li>
           <li class="nav-item active nav-justified nav-tabs nav-fill">
-            <a class="nav-link" href="services.html">Contact Us</a> <span class="sr-only">(current)</span>
+            <a class="nav-link" href="contactus.html">Contact Us</a>
           </li>      
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <div id="sb-search" class="sb-search" aria-placeholder="Search" placeholder="Search">
+        <form name="f1" action="" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
+        <input type="text" name=t1 value="" size=20 placeholder="Search">
         </form>
+        <button style='font-size:14px'>Cart <i class='fas fa-shopping-cart'></i></button>
+        <button style='font-size:14px'>Login <i class='fas fa-shopping-cart'></i></button>
       </div>
     </nav>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f07305" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,165.3C384,128,480,64,576,80C672,96,768,192,864,224C960,256,1056,224,1152,181.3C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <text x="470" y="200" font-family=" Times New Roman, Times, serif;" font-size="70" fill="black">CONTACT US! </text>
+      </svg>
+      
+    
     <header>
       <div class="owl-carousel owl-theme">
           <div class="item">
               <div class="cover">
                   <div class="container">
                       <div class="header-content">
-                          <h1 class ="h10">RESERVE TODAY</h1>
-                          <p class ="p3"> We are committed to providing exceptional service with our top experts! </p3>
-                              <p class ="p4">Each expert has its own expertise, please choose the one that suits you best!</p3>
+                          
+                          <p class ="p9"> We are committed to providing exceptional service with our top experts! </p3>
+                              <p class ="p4">Please find below all Informations you're looking for!</p3>
                       </div>
                       <div class="container">
                           <div class="row">
@@ -69,9 +123,9 @@
                                   <div class="card card-flip h-100">
                                       <div class="card-front text-white bg-primary">
                                           <div class="card-body">
-                                              <i class="fa fa-arrow-circle-right fa-5x float-right"></i>
-                                              <h3 class="card-title">Address</h3>
-                                              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                                              <i class="fa fa-arrow-circle-right fa-5x float-right "></i>
+                                              <h3 class="card-title">Store Location and Hours</h3>
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="orange" class="bi bi-map" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
                                               </svg>
                                               <p class="p3"></p>More Info
@@ -79,7 +133,7 @@
                                       </div>
                                       <div class="card-back bg-dark text-white">
                                           <div class="card-body">
-                                              <h3 class="card-title">Address</h3>
+                                              <h3 class="card-title">Store Location</h3>
                                               <p class="card-text">123 Merivale Road, Ottawa ON</p>
                                               <h3 class="card-title">Store Hours</h3>
                                               <p class="card-text">Open 24/7</p>
@@ -92,19 +146,22 @@
                                       <div class="card-front text-white bg-dark">
                                           <div class="card-body">
                                               <i class="fa fa-search fa-5x float-right"></i>
-                                              <h3 class="card-title text-center">Email</h3>
+                                              <h3 class="card-title text-center">Have a question?</h3>
                                               <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                                               </svg>
                                               <p class="card-text"></p>
-                                             <p class="p3">John Sars</p> More Info
+                                             <p class="p3">barbertown@hotmail.com </p> More Info
                                           </div>
                                       </div>
                                       <div class="card-back bg-white">
                                           <div class="card-body">
-                                              <h3 class="card-title">John Sars</h3>
-                                              <p class="card-text">Professional Expertise in HairStyling! Great for special occasion.</p>
-                                              <a onClick="document.getElementById('reserved').scrollIntoView();" class="btn22 btn-outline-primary">Reserve</a>
+                                              <h3 class="card-title">Phone</h3>
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="orange" class="bi bi-telephone" viewBox="0 0 16 16">
+                                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                              </svg>
+                                              <p class="p3">(613)123-4567.</p>
+                                              
                                           </div>
                                       </div>
                                   </div>
@@ -114,15 +171,14 @@
                                       <div class="card-front text-white bg-primary">
                                           <div class="card-body">
                                               <i class="fa fa-arrow-circle-right fa-5x float-right"></i>
-                                              <h3 class="card-title">Our HairStyler</h3>
-                                              <p class="p3">Tony Mark</p>More Info
+                                              <h3 class="card-title">Want to Join Us?</h3>
+                                              <p class="p3">Sure! Please fill out the form</p>More Info
                                           </div>
                                       </div>
                                       <div class="card-back bg-dark text-white">
                                           <div class="card-body">
-                                              <h3 class="card-title">Tony Mark</h3>
-                                              <p class="card-text">Tony Mark is a great attention detailed and perfom his task seriously.</p>
-                                              <a onClick="document.getElementById('reserved').scrollIntoView();" class="btn2 btn-outline-primary">Reserve</a>
+                                              <h3 class="card-title">Click Here</h3>
+                                              <a class="btn btn-warninggg " href="reservation.html">JOIN</a>
                                           </div>
                                           </div>
                                       </div>

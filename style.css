@@ -525,8 +525,8 @@ input[type=text] {
 
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
-    background-color: #00C9FF;
-    color: white;
+    background-color: #f08c08;
+    color: rgb(235, 9, 9);
     height: auto;
     padding:50px 0px;
     padding-left: 0%;
@@ -765,4 +765,23 @@ flip card
 .btn-warningggg:hover {
     color: #000000;
     border-color: #000000
+}
+
+.btn-warningg {
+    color: rgb(0, 0, 0);
+    position: inline;
+    margin-bottom: 90%;
+    padding-top: px;
+    font-size: 25px;
+    position: center;
+    width: 250px;
+    margin-bottom: 40px;
+    background-color: rgb(244, 132, 4);
+    background-image: none;
+    border-color: rgb(0, 0, 0)
+}
+
+.btn-warningg:hover {
+    color: #ffffff;
+    border-color: #ee1005
 }
